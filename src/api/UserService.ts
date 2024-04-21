@@ -10,7 +10,7 @@ const getUsers = async (pageParam: number) => {
   return { data: data?.results, next: pageParam + 1 };
 };
 
-const getUsersByName = async (users: User[], searchName: string) => {
+const getUsersByName = (users: User[], searchName: string) => {
   // I pass users here because randomuser API doesnt support passing search paramater
 
   return users.filter((user) => {

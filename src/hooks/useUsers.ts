@@ -25,11 +25,11 @@ export const useSearchUsers = (
 ) =>
   useQuery({
     queryKey: [`users/${search}`],
-    queryFn: async () => {
+    queryFn: () => {
       const cache = queryClient.getQueryData([`users/${search}`]);
       if (cache) return cache as User[];
 
-      const data = await getUsersByName(users, search);
+      const data = getUsersByName(users, search);
 
       return data;
     },
